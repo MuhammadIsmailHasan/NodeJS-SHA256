@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // post data 
-app.post('/api/get-desc', (req, res) => {
+app.post('/api/post-desc', (req, res) => {
     let data = req.body.data;
     let key = req.body.key;
     let eksekusi = desc(data, key);
