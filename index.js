@@ -5,7 +5,11 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 // parse json
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    parameterLimit: 100000,
+    limit: '50mb',
+    extended: true
+}));
 
 // post data 
 app.post('/api/post-desc', (req, res) => {
